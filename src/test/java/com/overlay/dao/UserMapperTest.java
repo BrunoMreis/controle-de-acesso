@@ -25,7 +25,8 @@ class UserMapperTest {
 		user.setId(1L);
 		user.setName("Passaro do capeta");
 		user.setEmail("email@email.com");
-		user.setPassword("1234567sdf");
+		// deepcode ignore HardcodedPassword/test: This is a test password
+  user.setPassword("1234567sdf");
 
 		service.saveUser(user);
 
