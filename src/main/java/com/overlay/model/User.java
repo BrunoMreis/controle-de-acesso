@@ -3,8 +3,12 @@ package com.overlay.model;
 import java.io.Serializable;
 import java.util.List;
 
+import org.apache.ibatis.type.Alias;
 
+
+@Alias("user")
 public class User implements Serializable {
+
 
 	private static final long serialVersionUID = 1L;
 

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.overlay.mapper.UserMapper">
 	<resultMap id="BaseResultMap"
-		type="com.overlay.mapper.UserMapper">
+		type="com.overlay.model.User">
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="userName" property="userName"
 			jdbcType="VARCHAR" />
@@ -12,27 +12,27 @@
 
 	<!--Query all -->
 	<select id="getAll" resultType="user">
-		select * from user
+		select * from "user"
 	</select>
 
 	<select id="findById" resultType="user">
-		select * from user where id
+		select * from "user" where id
 		=#{id}
 	</select>
 
 	<!--Save User -->
 	<insert id="saveUser" useGeneratedKeys="true" keyProperty="id">
-		insert into user(username,password) values(#{userName},#{passWord})
+		insert into "user"(username,password) values(#{name},#{password})
 	</insert>
 
 	<!--adopt Id delete user -->
 	<delete id="deleteUserById">
-		delete from user where id =#{id}
+		delete from "user" where id =#{id}
 	</delete>
 
 	<!--Update this user information -->
 	<update id="updateUser">
-		update user set userName = #{userName},passWord =
+		update "user" set userName = #{userName},passWord =
 		#{passWord}
 		where id = #{id}
 	</update>
