@@ -16,7 +16,6 @@ public class UserService{
         this.userMapper = userMapper;
     }
 
-
     public void saveUser(User user) {
         userMapper.saveUser(user);
     }
@@ -30,12 +29,10 @@ public class UserService{
     }
 
 	public List<User> getAll() {
-		 List<User> list = userMapper.getAll();
-		return list;
+		return userMapper.getAll();
 	}
 
 	public User findById(Long id) {
 		return userMapper.findById(id);
 	}
-
 }

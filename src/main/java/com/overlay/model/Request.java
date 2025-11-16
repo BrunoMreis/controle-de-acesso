@@ -1,20 +1,16 @@
 package com.overlay.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Request {
-	
-	private Long id;
-	private String subject;
-	private String description;
-	private LocalDate criationDate;
-	
-	private RequestState state;
-	
-	private List<RequestStage> stages;
-	
-	private User user;
-	
+public record Request(
+	Long id,
+	String subject,
+	String description,
+	LocalDate criationDate,
+	RequestState state,
+	List<RequestStage> stages,
+	User user
+) implements Serializable {}
 
-}
